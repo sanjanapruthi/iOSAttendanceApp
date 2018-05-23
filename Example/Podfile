@@ -1,8 +1,14 @@
 platform :ios, '8.0'
 use_frameworks!
-
+# hello
 target 'ProjectOxfordFace_Example' do
     pod 'ProjectOxfordFace'
+    pod 'Firebase'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+    pod 'SVProgressHUD'
+    pod 'ChameleonFramework'
+    pod 'Firebase/Storage'
 
     target 'ProjectOxfordFace_Tests' do
         inherit! :search_paths
