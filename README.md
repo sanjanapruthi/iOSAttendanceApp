@@ -70,5 +70,6 @@ Sample images are licensed separately, please refer to [LICENSE-IMAGE](/LICENSE-
 ## Developer Code of Conduct
 Developers using Cognitive Services, including this client library & sample, are expected to follow the “Developer Code of Conduct for Microsoft Cognitive Services”, found at [http://go.microsoft.com/fwlink/?LinkId=698895](http://go.microsoft.com/fwlink/?LinkId=698895).
 
-##testttt
-hello sanj
+
+## hello neha
+>>>>>>> 2f0ebb84c911f265af0d6525d81a19b3d09e3dc2
