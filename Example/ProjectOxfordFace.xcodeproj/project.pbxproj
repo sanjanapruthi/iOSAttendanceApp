@@ -515,7 +515,7 @@
 				ORGANIZATIONNAME = "David Porter";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = MQB57QAQX4;
+						DevelopmentTeam = 4WKXT4A94J;
 						ProvisioningStyle = Automatic;
 					};
 					6003F5AD195388D20070C39A = {
@@ -811,7 +811,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MQB57QAQX4;
+				DEVELOPMENT_TEAM = 4WKXT4A94J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -826,7 +826,7 @@
 					"-framework",
 					"\"ProjectOxfordFace\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.10018593.facerecognition;
+				PRODUCT_BUNDLE_IDENTIFIER = sanjanapruthi.iosfinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -842,7 +842,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = MQB57QAQX4;
+				DEVELOPMENT_TEAM = 4WKXT4A94J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -857,7 +857,7 @@
 					"-framework",
 					"\"ProjectOxfordFace\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.10018593.facerecognition;
+				PRODUCT_BUNDLE_IDENTIFIER = sanjanapruthi.iosfinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
