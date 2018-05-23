@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="LMA-Fd-pFW">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Navigation Controller-->
+        <scene sceneID="YKg-aq-k9J">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LMA-Fd-pFW" customClass="MPOMainNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="oqe-IA-eLp">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cFY-th-UOk" kind="relationship" relationship="rootViewController" id="HOy-X1-txi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EPZ-zD-xNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="113" y="413"/>
+        </scene>
+        <!--iOS Face Recognition-->
+        <scene sceneID="r4y-Yc-f2v">
+            <objects>
+                <viewController id="cFY-th-UOk" customClass="MPOMainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Alu-z1-O4M"/>
+                        <viewControllerLayoutGuide type="bottom" id="8h1-1F-v5v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KTp-Zt-BlG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="iOS Face Recognition" id="Fmm-Pr-WMt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mul-6q-QFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="506" y="401"/>
+        </scene>
+    </scenes>
+</document>

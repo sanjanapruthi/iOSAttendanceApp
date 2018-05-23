@@ -1,0 +1,16 @@
+PODS:
+  - ProjectOxfordFace (1.4.0)
+
+DEPENDENCIES:
+  - ProjectOxfordFace
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - ProjectOxfordFace
+
+SPEC CHECKSUMS:
+  ProjectOxfordFace: c18d8303cff1c378eaee49828f836014eecbc27c
+
+PODFILE CHECKSUM: 131e4fe4c75a90d268a211188257b346fc5ec4ea
+
+COCOAPODS: 1.5.0
