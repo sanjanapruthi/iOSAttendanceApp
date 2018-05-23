@@ -53,6 +53,7 @@
 		7B643BCB1D5F467B0012F342 /* CommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B643BC21D5F467B0012F342 /* CommonUtil.m */; };
 		7B643BD51D6041E00012F342 /* MPODetectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B643BD41D6041E00012F342 /* MPODetectionCell.m */; };
 		7B643BDB1D60604A0012F342 /* MPOGroupSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B643BDA1D60604A0012F342 /* MPOGroupSectionHeaderView.m */; };
+		C50B40155DEF453B25A49075 /* Pods_ProjectOxfordFace_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C020DA720A0947A00EC25BD /* Pods_ProjectOxfordFace_Example.framework */; };
 		EF575B0F1C6872540021A3AD /* DetectTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EF575B061C6872540021A3AD /* DetectTestCase.m */; };
 		EF575B101C6872540021A3AD /* GroupTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EF575B071C6872540021A3AD /* GroupTestCase.m */; };
 		EF575B111C6872540021A3AD /* IdentifyTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EF575B081C6872540021A3AD /* IdentifyTestCase.m */; };
@@ -201,6 +202,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
+				C50B40155DEF453B25A49075 /* Pods_ProjectOxfordFace_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +477,7 @@
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
 				F279D165879B451C158E7BC9 /* [CP] Embed Pods Frameworks */,
+				03DB0B554CE12B7955615A9A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -493,6 +496,8 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
+				4F2D83D999262ADD3C1080D6 /* [CP] Embed Pods Frameworks */,
+				7953AE7E7DAA1F0B43622C1D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -575,6 +580,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		03DB0B554CE12B7955615A9A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectOxfordFace_Example/Pods-ProjectOxfordFace_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3B19B1070C448191FAC2C1C6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -591,6 +611,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F2D83D999262ADD3C1080D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectOxfordFace_Tests/Pods-ProjectOxfordFace_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		51309F1CD15A8AD73DE52F14 /* [CP] Check Pods Manifest.lock */ = {
@@ -611,6 +646,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7953AE7E7DAA1F0B43622C1D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ProjectOxfordFace_Tests/Pods-ProjectOxfordFace_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F279D165879B451C158E7BC9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -618,11 +668,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProjectOxfordFace_Example/Pods-ProjectOxfordFace_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ProjectOxfordFace/ProjectOxfordFace.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProjectOxfordFace.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
