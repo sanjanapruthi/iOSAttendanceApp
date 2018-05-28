@@ -53,6 +53,11 @@
 		7B643BCB1D5F467B0012F342 /* CommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B643BC21D5F467B0012F342 /* CommonUtil.m */; };
 		7B643BD51D6041E00012F342 /* MPODetectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B643BD41D6041E00012F342 /* MPODetectionCell.m */; };
 		7B643BDB1D60604A0012F342 /* MPOGroupSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B643BDA1D60604A0012F342 /* MPOGroupSectionHeaderView.m */; };
+		BA14558820BB1BA200997852 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA14558720BB1BA200997852 /* GoogleService-Info.plist */; };
+		BA14558920BB1BA200997852 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA14558720BB1BA200997852 /* GoogleService-Info.plist */; };
+		BACBF46920B5C0AB0049FC54 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACBF46820B5C0AB0049FC54 /* LogInViewController.swift */; };
+		BACBF46B20B5C0BB0049FC54 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACBF46A20B5C0BA0049FC54 /* RegisterViewController.swift */; };
+		BACBF46D20B5C16D0049FC54 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACBF46C20B5C16D0049FC54 /* WelcomeViewController.swift */; };
 		C50B40155DEF453B25A49075 /* Pods_ProjectOxfordFace_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C020DA720A0947A00EC25BD /* Pods_ProjectOxfordFace_Example.framework */; };
 		EF575B0F1C6872540021A3AD /* DetectTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EF575B061C6872540021A3AD /* DetectTestCase.m */; };
 		EF575B101C6872540021A3AD /* GroupTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EF575B071C6872540021A3AD /* GroupTestCase.m */; };
@@ -173,6 +178,11 @@
 		87F83B3BC26C7A3EF3D14D52 /* Pods_ProjectOxfordFace_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectOxfordFace_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A51D13CAF7F407F1572D680E /* Pods-ProjectOxfordFace_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectOxfordFace_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectOxfordFace_Example/Pods-ProjectOxfordFace_Example.release.xcconfig"; sourceTree = "<group>"; };
 		AE558E5537FC3033395667D9 /* Pods_ProjectOxfordFace_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectOxfordFace_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA14558720BB1BA200997852 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BACBF46720B5C0AA0049FC54 /* ProjectOxfordFace_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProjectOxfordFace_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		BACBF46820B5C0AB0049FC54 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		BACBF46A20B5C0BA0049FC54 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		BACBF46C20B5C16D0049FC54 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		EF575B061C6872540021A3AD /* DetectTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetectTestCase.m; sourceTree = "<group>"; };
 		EF575B071C6872540021A3AD /* GroupTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupTestCase.m; sourceTree = "<group>"; };
 		EF575B081C6872540021A3AD /* IdentifyTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentifyTestCase.m; sourceTree = "<group>"; };
@@ -267,6 +277,7 @@
 				7B643B841D5F44EF0012F342 /* View */,
 				7B643B831D5F44E60012F342 /* Controller */,
 				7B643B6D1D5F44780012F342 /* Utils */,
+				BA14558720BB1BA200997852 /* GoogleService-Info.plist */,
 				6003F59C195388D20070C39A /* MPOAppDelegate.h */,
 				6003F59D195388D20070C39A /* MPOAppDelegate.mm */,
 				EFD5E59A1C79AA7300CD8FE8 /* MainStoryboard.storyboard */,
@@ -384,6 +395,9 @@
 		7B643B831D5F44E60012F342 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BACBF46C20B5C16D0049FC54 /* WelcomeViewController.swift */,
+				BACBF46A20B5C0BA0049FC54 /* RegisterViewController.swift */,
+				BACBF46820B5C0AB0049FC54 /* LogInViewController.swift */,
 				7B643B991D5F452B0012F342 /* MPOMainViewController.h */,
 				7B643B9A1D5F452B0012F342 /* MPOMainViewController.m */,
 				7B643B9B1D5F452B0012F342 /* MPODetectionViewController.h */,
@@ -406,6 +420,7 @@
 				7B4071AC1D65EC1100362256 /* MPOAddPersonFaceController.m */,
 				7B4071B11D69BFF300362256 /* MPOMainNavigationController.h */,
 				7B4071B21D69BFF300362256 /* MPOMainNavigationController.m */,
+				BACBF46720B5C0AA0049FC54 /* ProjectOxfordFace_Example-Bridging-Header.h */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -520,11 +535,13 @@
 				ORGANIZATIONNAME = "David Porter";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = 4WKXT4A94J;
+						DevelopmentTeam = PBCK83UPCF;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					6003F5AD195388D20070C39A = {
 						DevelopmentTeam = 86C6K78PD9;
+						LastSwiftMigration = 0920;
 						TestTargetID = 6003F589195388D20070C39A;
 					};
 				};
@@ -566,6 +583,7 @@
 				EF7E8CA51CA0C5A8005FFB2F /* WIN12_Alberto_01.png in Resources */,
 				EF7E8CA11CA0C5A8005FFB2F /* MSC12_John_002.jpg in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				BA14558820BB1BA200997852 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */,
+				BA14558920BB1BA200997852 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,7 +687,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ProjectOxfordFace_Example/Pods-ProjectOxfordFace_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/ProjectOxfordFace/ProjectOxfordFace.framework",
@@ -678,7 +696,6 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProjectOxfordFace.framework",
@@ -715,15 +732,18 @@
 				7B643BB31D5F452B0012F342 /* MPOPersonFacesController.m in Sources */,
 				7B4071B31D69BFF300362256 /* MPOMainNavigationController.m in Sources */,
 				7B643B8E1D5F450F0012F342 /* MPOSimpleFaceCell.m in Sources */,
+				BACBF46920B5C0AB0049FC54 /* LogInViewController.swift in Sources */,
 				7B643BCA1D5F467B0012F342 /* ViewUtils.m in Sources */,
 				7B643BAB1D5F452B0012F342 /* MPOMainViewController.m in Sources */,
 				7B643BC61D5F467B0012F342 /* UIImage+FixOrientation.m in Sources */,
 				7B643B811D5F44780012F342 /* ImageHelper.m in Sources */,
 				7B643B8C1D5F450F0012F342 /* MPOPersonFaceCell.m in Sources */,
 				7B643BAC1D5F452B0012F342 /* MPODetectionViewController.m in Sources */,
+				BACBF46D20B5C16D0049FC54 /* WelcomeViewController.swift in Sources */,
 				7B643BAF1D5F452B0012F342 /* MPOSimilarFaceViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				7B643BC81D5F467B0012F342 /* UIViewController+DismissKeyboard.m in Sources */,
+				BACBF46B20B5C0BB0049FC54 /* RegisterViewController.swift in Sources */,
 				7B643BB11D5F452B0012F342 /* MPOPersonGroupListController.m in Sources */,
 				7B643B981D5F45190012F342 /* PersonGroup.m in Sources */,
 				7B643B821D5F44780012F342 /* MBProgressHUD.m in Sources */,
@@ -871,9 +891,10 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4WKXT4A94J;
+				DEVELOPMENT_TEAM = PBCK83UPCF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -881,6 +902,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FaceSDK/FaceSdkMobile.framework/Headers";
 				INFOPLIST_FILE = "ProjectOxfordFace/ProjectOxfordFace-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACH_O_TYPE = mh_execute;
 				MODULE_NAME = ExampleApp;
 				OTHER_LDFLAGS = (
@@ -888,9 +910,12 @@
 					"-framework",
 					"\"ProjectOxfordFace\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sanjanapruthi.iosfinal;
+				PRODUCT_BUNDLE_IDENTIFIER = sbhs.iOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProjectOxfordFace/ProjectOxfordFace_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -902,9 +927,10 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4WKXT4A94J;
+				DEVELOPMENT_TEAM = PBCK83UPCF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -912,6 +938,7 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/FaceSDK/FaceSdkMobile.framework/Headers";
 				INFOPLIST_FILE = "ProjectOxfordFace/ProjectOxfordFace-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACH_O_TYPE = mh_execute;
 				MODULE_NAME = ExampleApp;
 				OTHER_LDFLAGS = (
@@ -919,9 +946,11 @@
 					"-framework",
 					"\"ProjectOxfordFace\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = sanjanapruthi.iosfinal;
+				PRODUCT_BUNDLE_IDENTIFIER = sbhs.iOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProjectOxfordFace/ProjectOxfordFace_Example-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -930,7 +959,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 14D9649E7385DC1922B971FB /* Pods-ProjectOxfordFace_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 86C6K78PD9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -945,8 +976,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProjectOxfordFace/ProjectOxfordFace_Tests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectOxfordFace_Example.app/ProjectOxfordFace_Example";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -956,7 +991,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6721C85774307A50E8CEE96C /* Pods-ProjectOxfordFace_Tests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 86C6K78PD9;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -967,8 +1004,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProjectOxfordFace/ProjectOxfordFace_Tests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ProjectOxfordFace_Example.app/ProjectOxfordFace_Example";
 				WRAPPER_EXTENSION = xctest;
 			};

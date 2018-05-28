@@ -30,11 +30,15 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "MPOAppDelegate.h"
+#import <Firebase/Firebase.h>
+//@import Firebase;
+
 //#import <ProjectOxfordFace/MPOFaceSDK.h>
 
 @implementation MPOAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [FIRApp configure];
     _jdaDetector = 0;
     _groups = [[NSMutableArray alloc] init];
     return YES;
