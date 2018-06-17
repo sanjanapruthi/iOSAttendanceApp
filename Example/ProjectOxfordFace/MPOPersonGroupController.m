@@ -259,15 +259,15 @@
     MPOFaceServiceClient *client = [[MPOFaceServiceClient alloc] initWithEndpointAndSubscriptionKey:ProjectOxfordFaceEndpoint key:ProjectOxfordFaceSubscriptionKey];
     MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
-    HUD.labelText = @"Saving group";
+    HUD.labelText = @"Training group";
     [HUD show: YES];
     
     [client trainLargePersonGroup:self.group.groupId completionBlock:^(NSError *error) {
         [HUD removeFromSuperview];
         if (error) {
-            [CommonUtil showSimpleHUD:@"Failed in saving group." forController:self.navigationController];
+            [CommonUtil showSimpleHUD:@"Failed in training group." forController:self.navigationController];
         } else {
-            [CommonUtil showSimpleHUD:@"This group is saved." forController:self.navigationController];
+            [CommonUtil showSimpleHUD:@"This group is trained." forController:self.navigationController];
         }
         if (_shouldExit) {
             [self.navigationController popViewControllerAnimated:YES];
@@ -302,7 +302,7 @@
 - (BOOL)navigationShouldPopOnBackButton {
     if (*self.needTraining) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Hint"
-                                                            message:@"Do you want to save this group?"
+                                                            message:@"Do you want to train this group?"
                                                            delegate:self
                                                   cancelButtonTitle:@"No"
                                                   otherButtonTitles:@"Yes", nil];

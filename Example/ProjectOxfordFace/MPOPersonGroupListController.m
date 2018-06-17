@@ -43,7 +43,7 @@
 
 - (void) saveEmailPersonGroup:(NSString*) m{
     _email = m;
-    NSLog(@"%@", _email);
+    //NSLog(@"%@", _email);
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
