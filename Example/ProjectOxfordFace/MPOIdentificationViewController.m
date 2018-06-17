@@ -544,6 +544,10 @@
 
 @implementation MPOIdentificationViewController
 
+- (void) saveEmail: (NSString*) m{
+    _email=m;
+    NSLog(@"%@", _email);
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.content = _listOfAbsentPpl;
@@ -782,6 +786,7 @@
 
 - (void)ManagePersonGroupAction:(id)sender {
     MPOPersonGroupListController * controller = [[MPOPersonGroupListController alloc] init];
+    [controller saveEmailPersonGroup:_email];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
