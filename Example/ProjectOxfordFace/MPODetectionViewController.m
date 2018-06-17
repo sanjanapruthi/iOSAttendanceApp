@@ -76,6 +76,7 @@
     _selectedImage = nil;
     _detectionFaces = [[NSMutableArray alloc] init];
     [self buildMainUI];
+    NSLog(@"Detection");
 }
 
 - (void)chooseImage: (id)sender {

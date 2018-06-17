@@ -39,6 +39,7 @@
 #import "CommonUtil.h"
 #import "MPOVerificationViewController.h"
 #import <ProjectOxfordFace/MPOFaceSDK.h>
+#import <ProjectOxfordFace_Example-Swift.h> //ADDED STUDF
 
 #define INTENSION_SAVE_GROUP   0
 #define INTENSION_ADD_PERSON   1
@@ -52,12 +53,20 @@
     int _intension;
 }
 
+@property(nonatomic, strong) FirebaseBrain *brain; //ADDED STUFFF
+
+
 @end
 
 @implementation MPOPersonGroupController
 
+- (void) saveEmailPersonGroupMain:(NSString*) m{
+    _email = m;
+    NSLog(@"%@", _email);
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"person group");
     [self buildMainUI];
     self.navigationItem.title = @"Person Group";
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
@@ -66,6 +75,8 @@
     *self.needTraining = NO;
     self.navigationItem.backBarButtonItem = backItem;
     [self setupForDismissKeyboard];
+    
+    _brain=[[FirebaseBrain alloc] init]; //creates new brain with every new group
 }
 
 - (instancetype) initWithGroup: (PersonGroup*) group {
@@ -136,6 +147,9 @@
                 return;
             }
             self.group.groupName = _groupNameField.text;
+            
+            //NSLog(@"%@", self.group.groupName);//
+            
             _shouldExit = NO;
             [self trainGroup];
         }];
@@ -241,35 +255,61 @@
 }
 
 - (void)trainGroup {
+    
     MPOFaceServiceClient *client = [[MPOFaceServiceClient alloc] initWithEndpointAndSubscriptionKey:ProjectOxfordFaceEndpoint key:ProjectOxfordFaceSubscriptionKey];
     MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
-    HUD.labelText = @"Saving group";
+    HUD.labelText = @"Training group";
     [HUD show: YES];
     
     [client trainLargePersonGroup:self.group.groupId completionBlock:^(NSError *error) {
         [HUD removeFromSuperview];
         if (error) {
-            [CommonUtil showSimpleHUD:@"Failed in saving group." forController:self.navigationController];
+            [CommonUtil showSimpleHUD:@"Failed in training group." forController:self.navigationController];
         } else {
-            [CommonUtil showSimpleHUD:@"This group is saved." forController:self.navigationController];
+            [CommonUtil showSimpleHUD:@"This group is trained." forController:self.navigationController];
         }
         if (_shouldExit) {
             [self.navigationController popViewControllerAnimated:YES];
         }
     }];
+    //printf(" train group is ocurring");
+    NSString *groupName=self.group.groupName;
+    //NSLog(@"%@", groupName);//
+    
+    [_brain saveEmailName: _email];
+    [_brain saveGroupName: groupName];
+    
+    for (GroupPerson *person in self.group.people){
+        //NSLog(@"%@", person.personName);
+        [_brain savePersonName: person.personName];
+        for (PersonFace *face in person.faces){
+            //NSLog(@"%@", face.image);
+            [_brain savePersonFace: face.image];
+        }
+        [_brain clearPersonFaces: person.personName];
+    }
+    
+    //[_brain ssave];
+    
+    //ADDED STUFF
+    
+    
+    
+    //printf("%s", self.group.groupName); //ready for an errorrrrrrrr
 }
 
 - (BOOL)navigationShouldPopOnBackButton {
     if (*self.needTraining) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Hint"
-                                                            message:@"Do you want to save this group?"
+                                                            message:@"Do you want to train this group?"
                                                            delegate:self
                                                   cancelButtonTitle:@"No"
                                                   otherButtonTitles:@"Yes", nil];
         alertView.tag = 1;
         _shouldExit = YES;
         [alertView show];
+        
         return NO;
     }
     return YES;
@@ -287,11 +327,21 @@
     if (alertView.tag == 0) {
         if (buttonIndex == 1) {
             [self createNewGroup];
+            //printf("Tag is zero");
         }
+        
     } else {
         if (buttonIndex == 1) {
+            printf("calling train group");
+            
             [self trainGroup];
+            //NSLog(@"%@", self.group.groupName);//
+            
+            //printf("Tag is other");
+            
         }
+        //printf("this is no?");
+        
     }
 }
 
@@ -315,8 +365,27 @@
                 [self.group.people removeObjectAtIndex:_selectedPersonIndex];
                 [_facesCollectionView reloadData];
             }];
+            NSString *groupName=self.group.groupName;
+            //NSLog(@"%@", groupName);//
+            
+            [_brain saveEmailName: _email];
+            [_brain saveGroupName: groupName];
+            
+            for (GroupPerson *person in self.group.people){
+                //NSLog(@"%@", person.personName);
+                [_brain savePersonName: person.personName];
+                for (PersonFace *face in person.faces){
+                    //NSLog(@"%@", face.image);
+                    [_brain savePersonFace: face.image];
+                }
+                [_brain clearPersonFaces: person.personName];
+            }
+             GroupPerson* currentP=self.group.people[_selectedPersonIndex];
+            [_brain deletePerson: currentP.personName];
+            
         }
     } else {
+        //NSLog(@"tag is not zero");
         if (buttonIndex == 0) {
             UIViewController * verificationController = nil;
             for (UIViewController * controller in self.navigationController.viewControllers) {

@@ -62,6 +62,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationItem.title = @"Find Similar Faces";
+    NSLog(@"similar face");
     [self buildMainUI];
     _baseFaces = [[NSMutableArray alloc] init];
    // _selectedFaces = [[NSMutableArray alloc] init];

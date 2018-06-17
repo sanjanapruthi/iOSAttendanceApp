@@ -31,9 +31,15 @@
 
 #import "MPOAppDelegate.h"
 #import <Firebase/Firebase.h>
+#import "PersonFace.h"
+#import "PersonGroup.h"
+#import "GroupPerson.h"
+#import <ProjectOxfordFace_Example-Swift.h> //ADDED STUDF
 //@import Firebase;
 
 //#import <ProjectOxfordFace/MPOFaceSDK.h>
+
+
 
 @implementation MPOAppDelegate
 

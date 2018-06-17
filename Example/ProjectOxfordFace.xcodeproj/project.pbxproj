@@ -53,6 +53,8 @@
 		7B643BCB1D5F467B0012F342 /* CommonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B643BC21D5F467B0012F342 /* CommonUtil.m */; };
 		7B643BD51D6041E00012F342 /* MPODetectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B643BD41D6041E00012F342 /* MPODetectionCell.m */; };
 		7B643BDB1D60604A0012F342 /* MPOGroupSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B643BDA1D60604A0012F342 /* MPOGroupSectionHeaderView.m */; };
+		9108252B20C182D7005487E4 /* FirebaseBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9108252A20C182D7005487E4 /* FirebaseBrain.swift */; };
+		9173741220BEEEC3006719B1 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9173741120BEEEC3006719B1 /* Test.swift */; };
 		BA14558820BB1BA200997852 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA14558720BB1BA200997852 /* GoogleService-Info.plist */; };
 		BA14558920BB1BA200997852 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA14558720BB1BA200997852 /* GoogleService-Info.plist */; };
 		BACBF46920B5C0AB0049FC54 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACBF46820B5C0AB0049FC54 /* LogInViewController.swift */; };
@@ -97,7 +99,7 @@
 		383B8562DF4DE37999FE4619 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		3A605DC677126D4E80C1EA81 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		48DF88C98C0ED6A235A8BF0E /* Pods-ProjectOxfordFace_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectOxfordFace_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectOxfordFace_Example/Pods-ProjectOxfordFace_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* Attendance Assure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Attendance Assure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* ProjectOxfordFace_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectOxfordFace_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -176,6 +178,8 @@
 		7B643BD91D60604A0012F342 /* MPOGroupSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPOGroupSectionHeaderView.h; sourceTree = "<group>"; };
 		7B643BDA1D60604A0012F342 /* MPOGroupSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPOGroupSectionHeaderView.m; sourceTree = "<group>"; };
 		87F83B3BC26C7A3EF3D14D52 /* Pods_ProjectOxfordFace_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectOxfordFace_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9108252A20C182D7005487E4 /* FirebaseBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseBrain.swift; sourceTree = "<group>"; };
+		9173741120BEEEC3006719B1 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		A51D13CAF7F407F1572D680E /* Pods-ProjectOxfordFace_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectOxfordFace_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectOxfordFace_Example/Pods-ProjectOxfordFace_Example.release.xcconfig"; sourceTree = "<group>"; };
 		AE558E5537FC3033395667D9 /* Pods_ProjectOxfordFace_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjectOxfordFace_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA14558720BB1BA200997852 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -246,7 +250,7 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* Attendance Assure.app */,
+				6003F58A195388D20070C39A /* ProjectOxfordFace_Example.app */,
 				6003F5AE195388D20070C39A /* ProjectOxfordFace_Tests.xctest */,
 			);
 			name = Products;
@@ -421,6 +425,8 @@
 				7B4071B11D69BFF300362256 /* MPOMainNavigationController.h */,
 				7B4071B21D69BFF300362256 /* MPOMainNavigationController.m */,
 				BACBF46720B5C0AA0049FC54 /* ProjectOxfordFace_Example-Bridging-Header.h */,
+				9173741120BEEEC3006719B1 /* Test.swift */,
+				9108252A20C182D7005487E4 /* FirebaseBrain.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -500,7 +506,7 @@
 			);
 			name = ProjectOxfordFace_Example;
 			productName = ProjectOxfordFace;
-			productReference = 6003F58A195388D20070C39A /* Attendance Assure.app */;
+			productReference = 6003F58A195388D20070C39A /* ProjectOxfordFace_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* ProjectOxfordFace_Tests */ = {
@@ -535,7 +541,7 @@
 				ORGANIZATIONNAME = "David Porter";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = 4WKXT4A94J;
+						DevelopmentTeam = PBCK83UPCF;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -736,6 +742,7 @@
 				7B643BCA1D5F467B0012F342 /* ViewUtils.m in Sources */,
 				7B643BAB1D5F452B0012F342 /* MPOMainViewController.m in Sources */,
 				7B643BC61D5F467B0012F342 /* UIImage+FixOrientation.m in Sources */,
+				9173741220BEEEC3006719B1 /* Test.swift in Sources */,
 				7B643B811D5F44780012F342 /* ImageHelper.m in Sources */,
 				7B643B8C1D5F450F0012F342 /* MPOPersonFaceCell.m in Sources */,
 				7B643BAC1D5F452B0012F342 /* MPODetectionViewController.m in Sources */,
@@ -743,6 +750,7 @@
 				7B643BAF1D5F452B0012F342 /* MPOSimilarFaceViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				7B643BC81D5F467B0012F342 /* UIViewController+DismissKeyboard.m in Sources */,
+				9108252B20C182D7005487E4 /* FirebaseBrain.swift in Sources */,
 				BACBF46B20B5C0BB0049FC54 /* RegisterViewController.swift in Sources */,
 				7B643BB11D5F452B0012F342 /* MPOPersonGroupListController.m in Sources */,
 				7B643B981D5F45190012F342 /* PersonGroup.m in Sources */,
@@ -894,7 +902,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4WKXT4A94J;
+				DEVELOPMENT_TEAM = PBCK83UPCF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -911,7 +919,7 @@
 					"\"ProjectOxfordFace\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sbhs.iOSApp;
-				PRODUCT_NAME = "Attendance Assure";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ProjectOxfordFace/ProjectOxfordFace_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -930,7 +938,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4WKXT4A94J;
+				DEVELOPMENT_TEAM = PBCK83UPCF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -947,7 +955,7 @@
 					"\"ProjectOxfordFace\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sbhs.iOSApp;
-				PRODUCT_NAME = "Attendance Assure";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ProjectOxfordFace/ProjectOxfordFace_Example-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
