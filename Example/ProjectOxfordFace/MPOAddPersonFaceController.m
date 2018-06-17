@@ -36,7 +36,6 @@
 #import "PersonFace.h"
 #import "CommonUtil.h"
 #import <ProjectOxfordFace/MPOFaceSDK.h>
-#import "ProjectOxfordFace_Example-Swift.h"
 
 @interface MPOAddPersonFaceController () <UICollectionViewDelegate,UICollectionViewDataSource,UIAlertViewDelegate> {
     UICollectionView *_facescollectionView;
@@ -50,7 +49,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"person face");
     self.navigationItem.title = @"Add face";
     [self buildMainUI];
     _selectedIndex = -1;
@@ -92,25 +90,28 @@
     [HUD show: YES];
     
     MPOFaceServiceClient *client = [[MPOFaceServiceClient alloc] initWithEndpointAndSubscriptionKey:ProjectOxfordFaceEndpoint key:ProjectOxfordFaceSubscriptionKey];
-    NSData *data = UIImageJPEGRepresentation(self.image, 0.8);
+    __block int *ifAdded=0; //0 is false, 1 is true
+    for(UIImage *img in self.image){
+    NSData *data = UIImageJPEGRepresentation(img, 0.8);
     
     [client addPersonFaceWithLargePersonGroupId:self.group.groupId personId:self.person.personId data:data userData:nil faceRectangle:face.face.faceRectangle completionBlock:^(MPOAddPersistedFaceResult *addPersistedFaceResult, NSError *error) {
         [HUD removeFromSuperview];
         if (error) {
-            [CommonUtil showSimpleHUD:@"Failed in adding face" forController:self.navigationController];
-            return;
+            //[CommonUtil showSimpleHUD:@"Failed in adding face" forController:self.navigationController];
+            NSLog(@"Error: %@ %@", error, [error userInfo]);            return;
         }
-        [CommonUtil showSimpleHUD:@"Face added to this person" forController:self.navigationController];
+        if (ifAdded==0){
+            [CommonUtil showSimpleHUD:@"Face added to this person" forController:self.navigationController];
         
-        face.faceId = addPersistedFaceResult.persistedFaceId;
-        [self.detectedFaces removeObject:face];
-        [self.person.faces addObject:face];
-        [_facescollectionView reloadData];
-        *self.needTraining = YES;
+            face.faceId = addPersistedFaceResult.persistedFaceId;
+            [self.detectedFaces removeObject:face];
+            [self.person.faces addObject:face];
+            [_facescollectionView reloadData];
+            *self.needTraining = YES;
+            ifAdded=1;
+        }
     }];
-    
-
-
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -125,7 +126,7 @@
     return self.detectedFaces.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     MPOSimpleFaceCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"faceCell" forIndexPath:indexPath];
     [cell.imageView setImage:[(PersonFace*)self.detectedFaces[indexPath.row] image]];
     cell.imageView.tag = indexPath.row;

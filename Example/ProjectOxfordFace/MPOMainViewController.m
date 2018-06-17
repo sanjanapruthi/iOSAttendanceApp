@@ -100,6 +100,23 @@
     UILabel * similarLabel = [[UILabel alloc] init];*/
     UILabel * identificationLabel = [[UILabel alloc] init];
     //UILabel * descriptionLabel = [[UILabel alloc] init];
+    /*UILabel * instructionsLabel = [[UILabel alloc] init];
+    UILabel * instructionsLabel2 = [[UILabel alloc] init];
+    UILabel * instructionsLabel2a = [[UILabel alloc] init];
+    UILabel * instructionsLabel2b = [[UILabel alloc] init];
+    UILabel * instructionsLabel3 = [[UILabel alloc] init];*/
+    
+    UIImageView *instructionsImgInit = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"AttendanceAssure"]];
+    
+
+    
+    UIImage *instructions = [self imageWithImage:instructionsImgInit.image convertToSize:CGSizeMake(scrollView.width-30, scrollView.height-100)];
+    UIImageView *instructionsImg = [[UIImageView alloc] initWithImage:instructions];
+
+
+    
+    
+
     
     /*NSString * detectionHint = @"Detect faces, face landmarks, pose, gender, and age.";
     NSString * verificationHint = @"Check if two faces belong to the same person.";
@@ -107,6 +124,11 @@
     NSString * SimilarFaceHint = @"Search for similar-looking faces.";*/
     NSString * identificationHint = @"Identify the person from a face.";
     //NSString * descriptionHint = @"Microsoft will receive the images you upload and may use them to improve Face API and related services. By submitting an image, you confirm that you have consent from everyone in it.";
+   /* NSString * instructionsText = @"Welcome to our iOS Attendance App! ";
+    NSString * instructionsText2 = @"To add a class: Click on “Manage Groups” and create a group by";
+    NSString * instructionsText2a = @"naming the group and adding students to it. Each student you";
+    NSString * instructionsText2b = @"add must have name and picture associated with him/her. ";
+    NSString * instructionsText3 = @"To take attendance : Take a picture of your class and let the app work it’s magic*! ";*/
     
     CGFloat btnWidth = SCREEN_WIDTH / 2 - 20;
     CGFloat btnHeight = btnWidth / 3;
@@ -125,15 +147,25 @@
     [groupingBtn setTitle:@"GROUPING" forState:UIControlStateNormal];
     [similarFaceBtn setTitle:@"FIND SIMILAR FACES" forState:UIControlStateNormal];
     similarFaceBtn.titleLabel.adjustsFontSizeToFitWidth = YES;*/
-    [identificationBtn setTitle:@"IDENTIFICATION" forState:UIControlStateNormal];
+    [identificationBtn setTitle:@"GO" forState:UIControlStateNormal];
+   /*[instructionsLabel setText:instructionsText];
+    [instructionsLabel2 setText:instructionsText2];
+    [instructionsLabel2a setText:instructionsText2a];
+    [instructionsLabel2b setText:instructionsText2b];
+    [instructionsLabel3 setText:instructionsText3];*/
+
     /*detectionBtn.right = verificationBtn.right = groupingBtn.right = similarFaceBtn.right = identificationBtn.right = scrollView.width - 20;
     
     detectionLabel.top = detectionBtn.top = 20;
     verificationLabel.top =  verificationBtn.top = detectionBtn.bottom + 20;
     groupingLabel.top = groupingBtn.top = verificationBtn.bottom + 20;
     similarLabel.top = similarFaceBtn.top = groupingBtn.bottom + 20;*/
-    identificationLabel.top = identificationBtn.top =20;
+    identificationBtn.center = identificationLabel.center = scrollView.center;
+    identificationBtn.top = SCREEN_HEIGHT-150;
+    instructionsImg.center = scrollView.center;
+    instructionsImg.top = 0;
     
+
     /*[detectionLabel setText:detectionHint];
     [verificationLabel setText:verificationHint];
     [groupingLabel setText:groupingHint];
@@ -144,8 +176,27 @@
     /*descriptionLabel.numberOfLines = detectionLabel.numberOfLines = verificationLabel.numberOfLines = groupingLabel.numberOfLines = similarLabel.numberOfLines = identificationLabel.numberOfLines = 0;
     descriptionLabel.font = detectionLabel.font = verificationLabel.font = groupingLabel.font = similarLabel.font = identificationLabel.font = descriptionLabel.font = [UIFont systemFontOfSize:12];*/
     identificationLabel.font = [UIFont systemFontOfSize:12];
+    /*instructionsLabel.font = [UIFont systemFontOfSize:12];
+    instructionsLabel2.font = [UIFont systemFontOfSize:12];
+    instructionsLabel2a.font = [UIFont systemFontOfSize:12];
+    instructionsLabel2b.font = [UIFont systemFontOfSize:12];
+    instructionsLabel3.font = [UIFont systemFontOfSize:12];*/
+
+
     /*detectionLabel.width = verificationLabel.width = groupingLabel.width = similarLabel.width = identificationLabel.width = btnWidth - 10;
      */
+    /*instructionsLabel.width = SCREEN_WIDTH - 10;
+    instructionsLabel.top = 50;
+    instructionsLabel2.width = SCREEN_WIDTH - 10;
+    instructionsLabel2.top = 100;
+    instructionsLabel2a.width = SCREEN_WIDTH - 10;
+    instructionsLabel2a.top = 150;
+    instructionsLabel2b.width = SCREEN_WIDTH - 10;
+    instructionsLabel2b.top = 200;
+    instructionsLabel3.width = SCREEN_WIDTH - 10;
+    instructionsLabel3.top = 250;*/
+
+    
     identificationLabel.width = btnWidth - 10;
     identificationLabel.height = btnHeight;
     /*detectionLabel.height = verificationLabel.height = groupingLabel.height = similarLabel.height = identificationLabel.height = btnHeight;
@@ -165,7 +216,15 @@
     [scrollView addSubview:verificationBtn];
     [scrollView addSubview:groupingBtn];
     [scrollView addSubview:similarFaceBtn];*/
+    /*[scrollView addSubview:instructionsLabel];
+    [scrollView addSubview:instructionsLabel2];
+    [scrollView addSubview:instructionsLabel2a];
+    [scrollView addSubview:instructionsLabel2b];
+
+    [scrollView addSubview:instructionsLabel3];*/
+
     [scrollView addSubview:identificationBtn];
+    [scrollView addSubview: instructionsImg];
     /*[scrollView addSubview:detectionLabel];
     [scrollView addSubview:verificationLabel];
     [scrollView addSubview:groupingLabel];
@@ -173,7 +232,7 @@
     //0[scrollView addSubview:identificationLabel];
     //[scrollView addSubview:descriptionLabel];
     
-    scrollView.contentSize = CGSizeMake(scrollView.width, identificationBtn.bottom + 20);
+    scrollView.contentSize = CGSizeMake(scrollView.width, SCREEN_HEIGHT - 20);
     [self.view addSubview:scrollView];
     
     if ([ProjectOxfordFaceSubscriptionKey isEqualToString:@"Your Subscription Key"]) {
@@ -236,6 +295,14 @@
         UIViewController * controller = [[MPOVerificationViewController alloc] initWithVerificationType:VerificationTypeFaceAndPerson];
         [self.navigationController pushViewController:controller animated:YES];
     }
+}
+
+- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size {
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return destImage;
 }
 
 @end
