@@ -322,25 +322,50 @@
     [HUD show: YES];
     
     MPOFaceServiceClient *client = [[MPOFaceServiceClient alloc] initWithEndpointAndSubscriptionKey:ProjectOxfordFaceEndpoint key:ProjectOxfordFaceSubscriptionKey];
-    NSData *data = UIImageJPEGRepresentation(selectedImage, 0.8);
+    //NSData *data = UIImageJPEGRepresentation(selectedImage, 0.8);
+    
+    NSMutableArray * imageArray = [[NSMutableArray alloc] init];
+    NSMutableArray * imageArray2 = [[NSMutableArray alloc] init];
+    
+    UIImage *imageScaled = [self imageWithImage:selectedImage convertToSize:CGSizeMake(selectedImage.size.width*4, selectedImage.size.height*4)];
+    
+    imageArray2 = [self getImagesFromImage:imageScaled withRow:2 withColumn: 2];
+    
+    [imageArray addObject:imageScaled];
+    
+    for (int i=0; i<[imageArray2 count]; i++){
+        [imageArray addObject:imageArray2[i]];
+        printf("abcd1");
+    }
+    
+    [_detectedFaces removeAllObjects];
+
+    __block int *imageArrayLengthLoop = [imageArray count];
+    NSMutableArray *collectionArray = [[NSMutableArray alloc]init];
+
+    for (UIImage *specImage in imageArray){
+        NSData *data = UIImageJPEGRepresentation(specImage, 0.8);
+        
     [client detectWithData:data returnFaceId:YES returnFaceLandmarks:YES returnFaceAttributes:@[] completionBlock:^(NSArray<MPOFace *> *collection, NSError *error) {
-        [HUD removeFromSuperview];
-        if (error) {
-            [CommonUtil showSimpleHUD:@"Detection failed" forController:self.navigationController];
-            return;
-        }
-        [_detectedFaces removeAllObjects];
+//        if (error) {
+//            [CommonUtil showSimpleHUD:@"Detection failed" forController:self.navigationController];
+//            return;
+//        }
+
         for (MPOFace *face in collection) {
-            UIImage *croppedImage = [selectedImage crop:CGRectMake(face.faceRectangle.left.floatValue, face.faceRectangle.top.floatValue, face.faceRectangle.width.floatValue, face.faceRectangle.height.floatValue)];
+            UIImage *croppedImage = [specImage crop:CGRectMake(face.faceRectangle.left.floatValue, face.faceRectangle.top.floatValue, face.faceRectangle.width.floatValue, face.faceRectangle.height.floatValue)];
             PersonFace *obj = [[PersonFace alloc] init];
             obj.image = croppedImage;
             obj.face = face;
             [_detectedFaces addObject:obj];
+            printf("adding a face");
         }
+        [collectionArray addObject:collection];
         
-        if (_detectedFaces.count == 0) {
-            [CommonUtil showSimpleHUD:@"No face detected" forController:self.navigationController];
-        } else if (_detectedFaces.count == 1) {
+        
+        //if (_detectedFaces.count == 0) {
+            //[CommonUtil showSimpleHUD:@"No face detected" forController:self.navigationController];
+        /*} else if (_detectedFaces.count == 1) {
             MBProgressHUD *HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
             [self.navigationController.view addSubview:HUD];
             HUD.labelText = @"Adding faces";
@@ -355,17 +380,32 @@
                 [self.person.faces addObject:_detectedFaces[0]];
                 [_facescollectionView reloadData];
                 *self.needTraining = YES;
-            }];
-        } else {
-            MPOAddPersonFaceController * controller = [[MPOAddPersonFaceController alloc] init];
-            controller.group = self.group;
-            controller.person = self.person;
-            controller.detectedFaces = _detectedFaces;
-            controller.image = selectedImage;
-            controller.needTraining = self.needTraining;
-            [self.navigationController pushViewController:controller animated:YES];
-        }
+            }];*/
+        //} else {
+        printf("this is a call");
+       // printf("%lu/n", imageArrayLengthLoop);
+        printf("%lu\n", _detectedFaces.count);
+        
+        //if ([collection count] >=0){
+            imageArrayLengthLoop--;
+
+            if ([collectionArray count]==[imageArray count]){
+                [HUD removeFromSuperview];
+
+                MPOAddPersonFaceController * controller = [[MPOAddPersonFaceController alloc] init];
+                controller.group = self.group;
+                controller.person = self.person;
+                controller.detectedFaces = _detectedFaces;
+                printf("finalloooppp");
+                printf("%lu\n", _detectedFaces.count);
+                controller.image = imageArray;
+                controller.needTraining = self.needTraining;
+                [self.navigationController pushViewController:controller animated:YES];
+            }
+        //}
+        //}
     }];
+    }
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
@@ -427,6 +467,38 @@
 {
     
 }
+    
+-(NSMutableArray *)getImagesFromImage:(UIImage *)image withRow:(NSInteger)rows withColumn:(NSInteger)columns
+{
+    NSMutableArray *images = [NSMutableArray array];
+    CGSize imageSize = image.size;
+    CGFloat xPos = 0.0, yPos = 0.0;
+    CGFloat width = imageSize.width/rows;
+    CGFloat height = imageSize.height/columns;
+    for (int y = 0; y < columns; y++) {
+        xPos = 0.0;
+        for (int x = 0; x < rows; x++) {
+            
+            CGRect rect = CGRectMake(xPos, yPos, width, height);
+            CGImageRef cImage = CGImageCreateWithImageInRect([image CGImage],  rect);
+            
+            UIImage *dImage = [[UIImage alloc] initWithCGImage:cImage];
+            [images addObject:dImage];
+            xPos += width;
+        }
+        yPos += height;
+    }
+    return images;
+}
+
+
+- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size {
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return destImage;
+}
 
 /*
 #pragma mark - Navigation
@@ -437,5 +509,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+    
+    
 
 @end
