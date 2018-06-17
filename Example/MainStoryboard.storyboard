@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="LMA-Fd-pFW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="LMA-Fd-pFW">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -52,7 +52,7 @@
         <!--Welcome-->
         <scene sceneID="rJc-h2-eaR">
             <objects>
-                <viewController storyboardIdentifier="welcomeVC" id="Q1Z-05-l0D" customClass="WelcomeViewController" customModule="Attendance_Assure" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcomeVC" id="Q1Z-05-l0D" customClass="WelcomeViewController" customModule="Flash_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ssa-4T-QUA"/>
                         <viewControllerLayoutGuide type="bottom" id="iVb-Jw-7ii"/>
@@ -117,7 +117,7 @@
         <!--Register-->
         <scene sceneID="AQJ-xH-fOy">
             <objects>
-                <viewController storyboardIdentifier="registrationVC" id="pvN-QV-Zwy" customClass="RegisterViewController" customModule="Attendance_Assure" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registrationVC" id="pvN-QV-Zwy" customClass="RegisterViewController" customModule="Flash_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MfO-sJ-aWk"/>
                         <viewControllerLayoutGuide type="bottom" id="Ozh-dj-g2N"/>
@@ -198,7 +198,7 @@
         <!--Log In-->
         <scene sceneID="RZ3-Ts-YdW">
             <objects>
-                <viewController storyboardIdentifier="logInVC" id="DBH-Si-bJO" customClass="LogInViewController" customModule="Attendance_Assure" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logInVC" id="DBH-Si-bJO" customClass="LogInViewController" customModule="Flash_Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oT4-29-WBd"/>
                         <viewControllerLayoutGuide type="bottom" id="jKX-wg-ytK"/>

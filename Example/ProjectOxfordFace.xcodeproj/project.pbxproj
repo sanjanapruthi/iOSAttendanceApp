@@ -99,7 +99,7 @@
 		383B8562DF4DE37999FE4619 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		3A605DC677126D4E80C1EA81 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		48DF88C98C0ED6A235A8BF0E /* Pods-ProjectOxfordFace_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectOxfordFace_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProjectOxfordFace_Example/Pods-ProjectOxfordFace_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* Attendance Assure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Attendance Assure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* ProjectOxfordFace_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectOxfordFace_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -250,7 +250,7 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* Attendance Assure.app */,
+				6003F58A195388D20070C39A /* ProjectOxfordFace_Example.app */,
 				6003F5AE195388D20070C39A /* ProjectOxfordFace_Tests.xctest */,
 			);
 			name = Products;
@@ -506,7 +506,7 @@
 			);
 			name = ProjectOxfordFace_Example;
 			productName = ProjectOxfordFace;
-			productReference = 6003F58A195388D20070C39A /* Attendance Assure.app */;
+			productReference = 6003F58A195388D20070C39A /* ProjectOxfordFace_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* ProjectOxfordFace_Tests */ = {
@@ -541,7 +541,7 @@
 				ORGANIZATIONNAME = "David Porter";
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
-						DevelopmentTeam = 4WKXT4A94J;
+						DevelopmentTeam = PBCK83UPCF;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
@@ -902,7 +902,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4WKXT4A94J;
+				DEVELOPMENT_TEAM = PBCK83UPCF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -919,7 +919,7 @@
 					"\"ProjectOxfordFace\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sbhs.iOSApp;
-				PRODUCT_NAME = "Attendance Assure";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ProjectOxfordFace/ProjectOxfordFace_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -938,7 +938,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 4WKXT4A94J;
+				DEVELOPMENT_TEAM = PBCK83UPCF;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -955,7 +955,7 @@
 					"\"ProjectOxfordFace\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = sbhs.iOSApp;
-				PRODUCT_NAME = "Attendance Assure";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ProjectOxfordFace/ProjectOxfordFace_Example-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
