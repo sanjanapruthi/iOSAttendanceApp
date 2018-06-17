@@ -41,8 +41,13 @@
 
 @implementation MPOPersonGroupListController
 
+- (void) saveEmailPersonGroup:(NSString*) m{
+    _email = m;
+    //NSLog(@"%@", _email);
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"person grouplist");
     [self buildMainUI];
     self.navigationItem.title = @"Person Group List";
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
@@ -58,6 +63,8 @@
 - (void)addGroupAction: (id)sender {
     MPOPersonGroupController * controller = [[MPOPersonGroupController alloc] init];
     controller.isForVarification = self.isForVarification;
+    [controller saveEmailPersonGroupMain: _email];
+    //[controller saveLogIn]; //
     [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -118,6 +125,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MPOPersonGroupController * controller = [[MPOPersonGroupController alloc] initWithGroup:GLOBAL.groups[indexPath.row]];
     controller.isForVarification = YES;
+    controller.isForVarification = self.isForVarification;
+    [controller saveEmailPersonGroupMain: _email];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

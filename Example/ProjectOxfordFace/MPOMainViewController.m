@@ -36,19 +36,53 @@
 #import "MPOSimilarFaceViewController.h"
 #import "MPOIdentificationViewController.h"
 #import <ProjectOxfordFace/MPOFaceSDK.h>
+#import <ProjectOxfordFace_Example-Swift.h> //ADDED STUDF
+#import "PersonFace.h"
+#import "PersonGroup.h"
+#import "GroupPerson.h"
+//#import "F"
 
 @interface MPOMainViewController () <UIActionSheetDelegate>
+
+//@property(nonatomic, strong) NSString *email; //ADDED STUFFF
 
 @end
 
 @implementation MPOMainViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
     backItem.title = @"back";
     self.navigationItem.backBarButtonItem = backItem;
+    //NSLog(@"create instance");
     [self buildMainUI];
+    //[ GLOBAL.groups
+
+    FirebaseBrain *brain = [[FirebaseBrain alloc] init];
+    
+    
+    NSArray *array = [brain returnGroupName: _email];
+    //NSLog(@"%@", [brain returnGroupName: _email]);
+    for (NSString* name in array){
+        PersonGroup* person = [[PersonGroup alloc] initWithGroupName: name];
+        NSMutableArray* peeps = [brain returnPeople: _email];
+        NSLog(@"%@", peeps);
+        [person setPeople: peeps];
+    }
+   // NSLog(@"hello");
+    //NSLog(@"%@", array);
+    
+    
+    PersonGroup* person = [[PersonGroup alloc] initWithGroupName: @"hello"];
+    //[person setPeople:]
+    GroupPerson* groupPerson = [[GroupPerson alloc] init];
+    PersonFace* personFace = [[PersonFace alloc] init];
+    [groupPerson setPersonName: @"personName"];
+    //[groupPerson setFaces: faces]
+    [GLOBAL.groups addObject: person];
 }
 
 - (void)buildMainUI {
@@ -178,7 +212,12 @@
 }
 
 - (void)identificationAction:(id)sender {
-    UIViewController * controller = [[MPOIdentificationViewController alloc] init];
+    MPOIdentificationViewController * controller = [[MPOIdentificationViewController alloc] init];
+    [controller saveEmail: _email];
+    //NSLog(@"create instance");
+    //NSLog(@"%@", _email);
+    //controller.email=_email;
+    //[controller saveEmail: _email];
     [self.navigationController pushViewController:controller animated:YES];
 }
 

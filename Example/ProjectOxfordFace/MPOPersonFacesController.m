@@ -58,6 +58,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"person faces");
     _detectedFaces = [[NSMutableArray alloc] init];
     [self buildMainUI];
     self.navigationItem.title = @"Person";

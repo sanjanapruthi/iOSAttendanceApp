@@ -41,6 +41,7 @@
 #import <ProjectOxfordFace/MPOFaceServiceClient.h>
 #import "MBProgressHUD.h"
 #import <ProjectOxfordFace/MPOFaceSDK.h>
+//#import <ProjectOxfordFace_Example-Swift.h> //ADDED STUDF
 
 #define MAX_RESULT_COUNT 20
 
@@ -52,10 +53,18 @@
     NSMutableArray * _faces;
     NSMutableArray * _results;
 }
+//ADDED STUFF
+//@property(nonatomic, strong) Test *test;
+//@property(nonatomic, strong) FirebaseBrain *brain;
 
 @end
 
 @implementation MPOIdentificationViewController
+
+- (void) saveEmail: (NSString*) m{
+    _email=m;
+    //NSLog(@"%@", _email);
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,15 +73,19 @@
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
     backItem.title = @"back";
     self.navigationItem.backBarButtonItem = backItem;
+    NSLog(@"indentification");
     [self buildMainUI];
     _results = [[NSMutableArray alloc] init];
     _faces = [[NSMutableArray alloc] init];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     [_groupListView reloadData];
 }
+
 
 - (void)identify:(id)sender {
     NSIndexPath * indexPath = _groupListView.indexPathForSelectedRow;
@@ -121,7 +134,6 @@
     }];
 }
 
-
 - (PersonFace*) getFaceByFaceId: (NSString*) faceId {
     for (PersonFace * face in _faces) {
         if ([face.face.faceId isEqualToString:faceId]) {
@@ -155,6 +167,14 @@
     ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     ipc.delegate = self;
     ipc.allowsEditing = YES;
+    
+    //ADDED STUFF TEST
+    //_test=[[Test alloc] init];
+    //_test.view.backgroundColor=[UIColor purpleColor];
+    //[self presentViewController:_test animated:YES completion:nil];
+    //_brain=[[FirebaseBrain alloc] init];
+    //[_brain save];
+    
     [self presentViewController:ipc animated:YES completion:nil];
 }
 
@@ -168,6 +188,7 @@
 
 - (void)ManagePersonGroupAction:(id)sender {
     MPOPersonGroupListController * controller = [[MPOPersonGroupListController alloc] init];
+    [controller saveEmailPersonGroup: _email];
     [self.navigationController pushViewController:controller animated:YES];
 }
 
@@ -380,6 +401,8 @@
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:groupCellIdentifier];
         }
         cell.textLabel.text = ((PersonGroup*)GLOBAL.groups[indexPath.row]).groupName;
+        NSLog(@"%@", GLOBAL.groups);
+        //NSLog(@"%@", GLOBAL.groups.);
         cell.backgroundColor = [UIColor clearColor];
         return cell;
     } else {

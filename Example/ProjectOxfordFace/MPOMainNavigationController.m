@@ -41,6 +41,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"navigation");
     // Do any additional setup after loading the view.
 }
 

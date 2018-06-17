@@ -36,18 +36,21 @@
 #import "PersonFace.h"
 #import "CommonUtil.h"
 #import <ProjectOxfordFace/MPOFaceSDK.h>
+#import "ProjectOxfordFace_Example-Swift.h"
 
 @interface MPOAddPersonFaceController () <UICollectionViewDelegate,UICollectionViewDataSource,UIAlertViewDelegate> {
     UICollectionView *_facescollectionView;
     NSInteger _selectedIndex;
 }
 
+//@property(nonatomic, strong) Test *test;
 @end
 
 @implementation MPOAddPersonFaceController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"person face");
     self.navigationItem.title = @"Add face";
     [self buildMainUI];
     _selectedIndex = -1;
@@ -105,6 +108,9 @@
         [_facescollectionView reloadData];
         *self.needTraining = YES;
     }];
+    
+
+
 }
 
 #pragma mark - UICollectionViewDataSource

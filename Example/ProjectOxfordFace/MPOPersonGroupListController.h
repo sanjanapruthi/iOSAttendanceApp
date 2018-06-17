@@ -35,5 +35,8 @@
 @interface MPOPersonGroupListController : UIViewController
 
 @property (nonatomic, assign) BOOL isForVarification;
+@property (nonatomic, strong) NSString *email;
+
+- (void) saveEmailPersonGroup:(NSString*) m;
 
 @end

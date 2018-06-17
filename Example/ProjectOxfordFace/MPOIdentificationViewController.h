@@ -33,5 +33,6 @@
 #import <ProjectOxfordFace/MPOFaceSDK.h>
 
 @interface MPOIdentificationViewController : UIViewController
-
+@property (nonatomic, strong) NSString *email;
+- (void) saveEmail:(NSString*) m;
 @end
