@@ -33,8 +33,9 @@
 #import <ProjectOxfordFace/MPOFaceSDK.h>
 
 
-@interface MPOMainViewController : UIViewController
 
+@interface MPOMainViewController : UIViewController
+@property(nonatomic, strong) NSString *email;
 
 @end
 

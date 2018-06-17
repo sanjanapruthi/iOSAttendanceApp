@@ -64,6 +64,7 @@
     _faces = [[NSMutableArray alloc] init];
     _resultGroups = [[NSMutableArray alloc] init];
     _messyGroupExists = FALSE;
+    NSLog(@"grouping");
 }
 
 - (void)chooseImage: (id)sender {

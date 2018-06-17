@@ -43,4 +43,8 @@
 
 - (instancetype) initWithGroup: (PersonGroup*) group;
 
+@property (nonatomic, strong) NSString *email;
+
+- (void) saveEmailPersonGroupMain:(NSString*) m;
+
 @end

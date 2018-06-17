@@ -81,6 +81,7 @@
     _selectedFaceIndex1 = -1;
     _selectedGroup = nil;
     _selectedPerson = nil;
+    NSLog(@"Verification");
     
     [self buildMainUI];
 }

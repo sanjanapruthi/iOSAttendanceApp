@@ -23,7 +23,13 @@ class LogInViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC=segue.destination as! MPOMainViewController
+        var arr = emailTextfield.text!.components(separatedBy: ".")
+        destinationVC.email = arr[0]
+        print("hello")
+        
+    }
     @IBAction func logInPressed(_ sender: AnyObject) {
         //SVProgressHUD.show()
         Auth.auth().signIn(withEmail: emailTextfield.text!, password: passwordTextfield.text!) { (user, error) in
