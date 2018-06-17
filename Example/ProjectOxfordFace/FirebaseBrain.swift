@@ -12,6 +12,7 @@ import FirebaseDatabase
 import FirebaseCore
 import FirebaseStorage
 
+
 class FirebaseBrain: NSObject {
     
     //var groupNames: [NSString] = []
@@ -20,7 +21,7 @@ class FirebaseBrain: NSObject {
     var faces: [UIImage] = []
     //var count: Integer = 0
     var email: NSString = ""
-    var userArray = Array<Dictionary<String, Any>>()
+    
     var personDictionary = Dictionary<NSString, [String]>()
     
     var ref: DatabaseReference!
@@ -29,7 +30,6 @@ class FirebaseBrain: NSObject {
     
     override init(){
         ref = Database.database().reference().child("users")
-        print("hey")
     }
     func ssave(){ //call firebase each time because a new brain is created with each new group
         print ("before saving to firebase database \(personDictionary)")
@@ -55,121 +55,29 @@ class FirebaseBrain: NSObject {
     }
     
     func deleteFace(){
-        print("address")
+        
     }
     
-    func retrieveGroupNames(_ m: NSString) -> Array<Any>{
-        print("inside group names")
-        var names: [Any] = []
-        print (userArray)
-        for dictionary in userArray{
-            print(dictionary)
-            if let test = dictionary["Group Name"] {
-                print (test)
-                names.append(test)
-                print ("inside")
-            } else {
-                print("error")
-            }
-        }
-        print (names)
-        return names
-    }
-    
-    func retrieve(_ m: NSString) {
-        let appDelegate = UIApplication.shared.delegate as! MPOAppDelegate
-        //appDelegate.groups
-        
-        
-        
+    func retrieve(_ m: NSString) -> Array<Dictionary<String, Any>> {
+        var userArray = Array<Dictionary<String, Any>>()
         ref.child(m as String).observeSingleEvent(of: .value, with: { (snapshot) in
             if let address = snapshot.value{
-                print("address")
+                //print(address)
                 let enumerator = snapshot.children
                 while let listObject = enumerator.nextObject() as? DataSnapshot {
                     //print(listObject)
                     //print(listObject.value)
-                    
                     var groupDictionary = Dictionary<String, Any>()
                     groupDictionary["Group Name"] = listObject.key
-                    var pg: PersonGroup = PersonGroup()
-                    pg.groupName=listObject.key
-                    var ppl: NSMutableArray = []
-                    //print(pg.groupName)
-                    
-                    
-                    
                     groupDictionary["person"] = listObject.childSnapshot(forPath: "person").value
-                    //var pD: NSArray = listObject.childSnapshot(forPath: "person").value as! NSArray
-                    let pD: DataSnapshot = listObject.childSnapshot(forPath: "person")
-                    
-                    let iterator=pD.children
-                   // print(iterator);
-                    while let p = iterator.nextObject() as? DataSnapshot{
-                        
-                        var peron: GroupPerson = GroupPerson()
-                        peron.personName = p.key
-                        var facees: NSMutableArray = []
-                        let arre: NSArray = p.value as! NSArray
-                        let length: Int = arre.count
-                        print("length\(length)")
-                        for img in (p.value as? NSArray)!{
-                            // download images for one face set to pface
-                            //pFace.set //img is the link
-                            let preUrl = NSURL(string: img as! String)
-                            let url = URLRequest(url: preUrl! as URL)
-                            //URLSession.shared session.dataTask
-                            var count: Int = 0;
-                            URLSession.shared.dataTask(with: url,   completionHandler:{(data,response,error) in
-                               if error != nil {
-                                    print ("error")
-                                }
-                                
-                                /*if let image: UIImage = UIImage(data: data!){
-                                    facees.add(image)
-                                    count = count+1
-                                    print(count)//litty
-                                } else {print ("error with image")}
-                                if (count==length){
-                                    peron.faces=facees
-                                    ppl.add(peron)
-                                    print("i like you")
-                                    print("this is peron\(peron.faces)")
-                                    //print(appDelegate.groups)
-                                } else {print("i hate you count \(count)")}*/
-                                DispatchQueue.main.async{
-                                    print("can someone pls define dispatch")
-                                    if let image: UIImage = UIImage(data: data!){
-                                        var pf: PersonFace = PersonFace()
-                                        pf.image=image
-                                        facees.add(pf)
-                                        count = count+1
-                                        print(count)//litty
-                                    } else {print ("error with image")}
-                                    if (count==length){
-                                        peron.faces=facees
-                                        
-                                        ppl.add(peron)
-                                        print("i like you")
-                                        print("this is peron\(peron.faces)")
-                                        //print(appDelegate.groups)
-                                    } else {print("i hate you count \(count)")}
-                                    
-                                }
-                            }).resume()
-                        }
-                    }
-                    pg.people=ppl
-                    appDelegate.groups.add(pg)
-                    //print(listObject.childrenCount)
-                    self.userArray.append(groupDictionary)
+                    print(listObject.childrenCount)
+                    userArray.append(groupDictionary)
                     
                     //print(e)
                     //print(e.allObjects)
-                    //print(self.userArray)
                     
                 }
-                
+                //print(userArray)
             } else {print ("error")}
             //print(groupDictionary)
             
@@ -182,13 +90,10 @@ class FirebaseBrain: NSObject {
         }) { (error) in
             print(error.localizedDescription)
         }
-        
-        print (appDelegate.groups)
-        
-        print("after retrieved")
+        return userArray
     }
     
-    /*func returnGroupName(_ m: NSString) -> [String] {
+    func returnGroupName(_ m: NSString) -> [String] {
         var myArray : [String] = [];
         ref.child(m as String).observeSingleEvent(of: .value, with: { (snapshot) in
             if snapshot.value != nil{
@@ -196,13 +101,12 @@ class FirebaseBrain: NSObject {
                 while let listObject = enumerator.nextObject() as? DataSnapshot {
                     print(listObject.key)
                     myArray.append(listObject.key)
-                    print(myArray)
                 }
             } else {print ("error")}
         }) { (error) in
             print(error.localizedDescription)
         }
-        //print(myArray)
+        print(myArray)
         return myArray
     }
     func returnPeople(_ m: NSString) -> [String] {
@@ -218,7 +122,7 @@ class FirebaseBrain: NSObject {
             print(error.localizedDescription)
         }
         return userArray
-    }*/
+    }
     
     func deletePerson(_ pN: NSString){
         //personDictionary=

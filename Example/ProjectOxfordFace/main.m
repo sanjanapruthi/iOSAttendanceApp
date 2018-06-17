@@ -1,4 +1,4 @@
-// Copyright (c) Microsoft. All rights reserved.
+//// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license.
 //
 // Microsoft Cognitive Services (formerly Project Oxford): https://www.microsoft.com/cognitive-services

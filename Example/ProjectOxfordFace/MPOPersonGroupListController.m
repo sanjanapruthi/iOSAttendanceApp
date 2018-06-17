@@ -32,6 +32,7 @@
 #import "MPOPersonGroupListController.h"
 #import "MPOPersonGroupController.h"
 #import <ProjectOxfordFace/MPOFaceSDK.h>
+#import <ProjectOxfordFace_Example-Swift.h>
 
 @interface MPOPersonGroupListController () <UITableViewDelegate, UITableViewDataSource> {
     UITableView * _groupListView;
@@ -43,7 +44,7 @@
 
 - (void) saveEmailPersonGroup:(NSString*) m{
     _email = m;
-    //NSLog(@"%@", _email);
+    NSLog(@"%@", _email);
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
